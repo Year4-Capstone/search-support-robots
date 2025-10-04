@@ -1,0 +1,5 @@
+sounddevice
+soundfile
+numpy
+vosk
+pyusb==1.2.1
