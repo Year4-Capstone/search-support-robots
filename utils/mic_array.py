@@ -145,7 +145,7 @@ def main():
             if dev is None:
                 raise RuntimeError("ReSpeaker HID device not found via PyUSB")
             try:
-                from usb_4_mic_array.tuning import Tuning
+                from tuning import Tuning
             except Exception:
                 from tuning import Tuning
             tuner = Tuning(dev)
