@@ -1,0 +1,2 @@
+source;share/behavior-tree/environment/ament_prefix_path.sh
+source;share/behavior-tree/environment/path.sh
