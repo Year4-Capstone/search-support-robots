@@ -1,3 +1,6 @@
+#include <behaviortree_cpp/bt_factory.h>
+#include <rclcpp/rclcpp.hpp>
+
 class ReplanSearchArea : public BT::SyncActionNode {
 public:
   ReplanSearchArea(const std::string& name, const BT::NodeConfig& config)

@@ -1,3 +1,6 @@
+#include <behaviortree_cpp/bt_factory.h>
+#include <rclcpp/rclcpp.hpp>
+
 class ApproachPerson : public BT::SyncActionNode {
 public:
   ApproachPerson(const std::string& name, const BT::NodeConfig& config)

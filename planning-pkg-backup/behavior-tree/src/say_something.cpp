@@ -1,4 +1,5 @@
 #include <behaviortree_cpp/bt_factory.h>
+#include <rclcpp/rclcpp.hpp>
 #include <iostream>
 
 class SaySomething : public BT::SyncActionNode

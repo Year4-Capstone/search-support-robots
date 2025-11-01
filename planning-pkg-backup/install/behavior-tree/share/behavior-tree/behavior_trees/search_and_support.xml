@@ -1,18 +1,1 @@
-<root BTCPP_format="4" main_tree_to_execute="MainTree">
-  <BehaviorTree ID="MainTree">
-    <Sequence name="MainMission">
-      <CheckSystemOK/>
-      <Fallback name="SearchAndRescue">
-        <Sequence name="SearchMode">
-          <NavigateToNextWaypoint/>
-          <DetectPerson/>
-          <ApproachPerson/>
-          <DeliverPayload/>
-          <ReportToBase/>
-        </Sequence>
-        <ReplanSearchArea/>
-      </Fallback>
-      <ReportToBase/>
-    </Sequence>
-  </BehaviorTree>
-</root>
+/home/luke/Projects/search-support-robots/ros-packages copy/behavior-tree/behavior_trees/search_and_support.xml
