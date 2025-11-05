@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.8)
 project(behavior-tree)
 
-# Use modern C++
+# -------------------------------------------------
+# C++ standard
+# -------------------------------------------------
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
@@ -20,28 +22,17 @@ find_package(ament_index_cpp REQUIRED)
 
 include_directories(include)
 
-# -------------------------------------------------
-# Test node (stand-alone)
-# -------------------------------------------------
 add_executable(test_rclcpp_node src/test_rclcpp_node.cpp)
-ament_target_dependencies(test_rclcpp_node rclcpp)
-install(TARGETS test_rclcpp_node DESTINATION lib/${PROJECT_NAME})
-
-# -------------------------------------------------
-# Behavior-Tree executable
-# -------------------------------------------------
-add_executable(run_tree
-  src/run_tree.cpp
-  # src/check_system.cpp
-  # src/navigate_to_waypoint.cpp
-  # src/detect_person.cpp
-  # src/approach_person.cpp
-  # src/deliver_payload.cpp
-  # src/replan_search_area.cpp
-  # src/report_to_base.cpp
+ament_target_dependencies(test_rclcpp_node
+  rclcpp
+)
+install(TARGETS test_rclcpp_node
+  DESTINATION lib/${PROJECT_NAME}
 )
 
-ament_target_dependencies(run_tree
+add_executable(search_support_bt_runner src/search_and_support_nodes.cpp)
+
+ament_target_dependencies(search_support_bt_runner
   rclcpp
   rclcpp_action
   nav2_msgs
@@ -52,13 +43,17 @@ ament_target_dependencies(run_tree
   ament_index_cpp
 )
 
-install(TARGETS run_tree DESTINATION lib/${PROJECT_NAME})
+install(TARGETS search_support_bt_runner
+  DESTINATION lib/${PROJECT_NAME}
+)
 
-# -------------------------------------------------
-# Install XML behavior trees
-# -------------------------------------------------
-install(
-  DIRECTORY behavior_trees/
+install(FILES
+  behavior_trees/search_and_support.xml
+  behavior_trees/SearchAndSupport.btproj
+  DESTINATION share/${PROJECT_NAME}
+)
+
+install(DIRECTORY behavior_trees/
   DESTINATION share/${PROJECT_NAME}/behavior_trees
 )
 
