@@ -2,5 +2,8 @@
 	path = mesh-network
 	url = git@github.com:Year4-Capstone/mesh-network.git
 [submodule "ros-packages"]
-	path = ros-packages
-	url = git@github.com:Year4-Capstone/ros-packages.git
+	path = ros2_ws
+	url = git@github.com:Year4-Capstone/ros2_ws.git
+[submodule "ros2_ws"]
+	path = ros2_ws
+	url = git@github.com:Year4-Capstone/ros2_ws.git
