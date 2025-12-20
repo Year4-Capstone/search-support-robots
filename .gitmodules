@@ -7,3 +7,12 @@
 [submodule "ros2_ws"]
 	path = ros2_ws
 	url = git@github.com:Year4-Capstone/ros2_ws.git
+[submodule "hardware-design"]
+	path = hardware-design
+	url = git@github.com:Year4-Capstone/hardware-design.git
+[submodule "docs"]
+	path = docs
+	url = git@github.com:Year4-Capstone/docs.git
+[submodule "dev-tools"]
+	path = dev-tools
+	url = git@github.com:Year4-Capstone/dev-tools.git
